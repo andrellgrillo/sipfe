@@ -9,4 +9,15 @@ export class PrismaClientsRepository implements ClientsRepository {
     })
     return client
   }
+
+  async findAll() {
+    const clients = await prisma.client.findMany({
+      orderBy: [
+        {
+          shortName: 'asc',
+        },
+      ],
+    })
+    return clients
+  }
 }

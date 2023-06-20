@@ -18,4 +18,12 @@ export class InMemoryClientsRepository implements ClientsRepository {
     this.items.push(client)
     return client
   }
+
+  async findAll() {
+    const clients = this.items
+    if (!clients) {
+      return null
+    }
+    return clients
+  }
 }

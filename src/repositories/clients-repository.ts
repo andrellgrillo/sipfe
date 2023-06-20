@@ -2,6 +2,7 @@ import { Prisma, Client } from '@prisma/client'
 
 export interface ClientsRepository {
   create(data: Prisma.ClientCreateInput): Promise<Client>
+  findAll(): Promise<Client[] | null>
 }
 
 // findById(id: string): Promise<User | null>

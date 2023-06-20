@@ -5,7 +5,7 @@ import { ClientAlreadyExistsError } from '@/models/use-cases/errors/client-alrea
 import { ShortnameAlreadyExistsError } from '@/models/use-cases/errors/shortname-already-exists-error'
 import { makeCreateClientUseCase } from '@/models/use-cases/factories/make-create-client-use-case'
 
-export async function create(req: FastifyRequest, rep: FastifyReply) {
+export async function createClient(req: FastifyRequest, rep: FastifyReply) {
   const createBodySchema = z.object({
     name: z.string(),
     shortName: z.string().min(4).max(30),
